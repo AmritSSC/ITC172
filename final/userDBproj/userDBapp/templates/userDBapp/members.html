@@ -1,0 +1,17 @@
+{% extends 'base.html' %} {% block content %}
+<h2>Members</h2>
+<table class="table">
+    <tr>
+        <th>Name</th>
+        <th>Type</th>
+    </tr>
+    {% for p in products_list %}
+    <tr>
+        <td>{{ p.userName }}</td>
+        <td><a href="{% url 'userdetails' id=p.id %}">{{ p.userName }}</a></td>
+        <td> {{p.foodType }}</td>
+    </tr>
+    {% endfor %}
+
+</table>
+{% endblock %}

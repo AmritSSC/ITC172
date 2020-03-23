@@ -1,0 +1,12 @@
+{% extends 'base.html' %} {% block content %}
+<h2>{{ userName.userName }}</h2>
+<p>Food Type: {{ userName.foodType }} </p>
+<p>Join Date: {{ userName.userJoinDate }}</p>
+<p>Location: {{ userName.userLocation }}</p>
+<p>Allergies: {{ userName.userAllergies }}</p>
+<p>Favorites: {{ userName.userFavorites }}</p>
+<p>Description: {{ userName.userDescription }}</p>
+<p>No. Of Guest Reviews: {{ guestReviews }}</p>
+<p>No. Of Host Reviews: {{ hostReviews }}</p>
+
+{% endblock %}
