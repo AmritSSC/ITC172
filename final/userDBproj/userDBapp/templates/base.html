@@ -12,7 +12,7 @@
 
 <body>
     <div class='jumbotron' style="background-color: Navy; color: white;">
-        <h1>Sharing is Caring!</h1>
+        <h1>Let's Get Together!</h1>
     </div>
     <nav class="navbar navbar-default">
         <div class="container-fluid">
@@ -23,6 +23,9 @@
 
                 <li><a href="{% url 'types' %}">Food Types</a></li>
                 <li><a href="{% url 'members' %}">Members</a></li>
+                <li><a href="{% url 'newUser' %}">Add User</a></li>
+                <li><a href="{% url 'login' %}">Login</a></li>
+                <li><a href="{% url 'logout' %}">Logout</a></li>
             </ul>
         </div>
     </nav>
