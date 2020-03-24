@@ -66,7 +66,7 @@ class GetMemberTest(TestCase):
        self.user = userDetail.objects.create(userName='user1', foodType=self.type, user=self.u, userLocation="Idaho", userJoinDate='2019-04-02', userDescription="a user")
        self.rev1=guestReview.objects.create(guestReviewTitle='guestreview', guestReviewDate='2019-04-03', guestUser=self.user, guestReviewrating=4, guestReviewText='some review')
        self.rev1.user.add(self.u)
-       self.rev2=Review.objects.create(hostReviewTitle='hostreview', hostReviewDate='2019-04-03', hostuser=self.user,  hoststReviewRating=4, hostReviewText='some other review')
+       self.rev2=hostReview.objects.create(hostReviewTitle='hostreview', hostReviewDate='2019-04-03', hostuser=self.user,  hoststReviewRating=4, hostReviewText='some other review')
        self.rev2.user.add(self.u)
 
    def test_product_detail_success(self):
