@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 
 class foodType(models.Model):
     typeName=models.CharField(max_length=64)
-    typeDscription=models.CharField(max_length=1024, null=True, blank=True)
+    typeDescription=models.CharField(max_length=10241)
 
     def __str__(self):
         return self.typeName
@@ -39,7 +39,7 @@ class guestReview(models.Model):
     guestUserReviewed=models.ForeignKey(userDetail, on_delete=models.CASCADE)
     guestUser=models.ManyToManyField(User)
     guestreviewRating=models.SmallIntegerField()
-    guestreviewRext=models.TextField()
+    guestreviewText=models.TextField()
 
     def __str__(self):
         return self.guestReviewTitle
@@ -54,7 +54,7 @@ class hostReview(models.Model):
     hostUserReviewed=models.ForeignKey(userDetail, on_delete=models.CASCADE)
     hostUser=models.ManyToManyField(User)
     hostReviewRating=models.SmallIntegerField()
-    hostReviewRext=models.TextField()
+    hostReviewText=models.TextField()
 
     def __str__(self):
         return self.hostReviewTitle

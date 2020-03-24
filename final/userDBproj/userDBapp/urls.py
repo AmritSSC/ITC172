@@ -6,4 +6,7 @@ urlpatterns=[
     path('getTypes/', views.getTypes, name='types'),
     path('getUsers/', views.getUsers, name='members'),
     path('userDetails/<int:id>', views.userDetails, name='userdetails'),
+    path('newUser/', views.newUser, name='newUser'),
+    path('loginmessage/', views.loginmessage, name='loginmessage'),
+    path('logoutmessage/', views.logoutmessage, name='logoutmessage'),
 ]

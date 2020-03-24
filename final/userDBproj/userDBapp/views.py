@@ -1,5 +1,8 @@
 from django.shortcuts import render
 from .models import foodType, userDetail, guestReview, hostReview
+from .forms import userForm
+
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 def index (request):
@@ -27,3 +30,36 @@ def userDetails(request, id):
         'Host Reviews' : hostReviews,
     }
     return render(request, 'userDBapp/userDetails.html', context=context)
+
+
+def newUser(request):
+     form=userForm
+     if request.method=='POST':
+          form=userForm(request.POST)
+          if form.is_valid():
+               post=form.save(commit=True)
+               post.save()
+               form=userForm()
+     else:
+          form=userForm()
+     return render(request, 'userDBapp/newUser.html', {'form': form})
+
+
+def loginmessage(request):
+    return render(request, 'userDBapp/loginmessage.html')
+
+def logoutmessage(request):
+    return render(request, 'userDBapp/logoutmessage.html')
+
+@login_required
+def newUser(request):
+     form=userForm
+     if request.method=='POST':
+          form=userForm(request.POST)
+          if form.is_valid():
+               post=form.save(commit=True)
+               post.save()
+               form=userForm()
+     else:
+          form=userForm()
+     return render(request, 'userDBapp/newUser.html', {'form': form})    
